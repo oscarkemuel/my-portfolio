@@ -47,3 +47,12 @@ hr {
   padding: 0;
   width: auto;
 }
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #FBB969;
+    --background: #FBB969;
+    --default-color: #FBB969;
+    --background-reverse: #444444;
+  }
+}

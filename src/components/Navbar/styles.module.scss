@@ -38,4 +38,8 @@
       filter: brightness(1.2);
     }
   }
+
+  @media screen and (max-width: 570px) {
+    display: none;
+  }
 }
