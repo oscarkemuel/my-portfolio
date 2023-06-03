@@ -6,7 +6,7 @@ import { Section } from "@/components/Section";
 export default function Home() {
   return (
     <main className={styles.main}>
-      <Section>
+      <Section id="about">
         <Apresentation />
       </Section>
 
