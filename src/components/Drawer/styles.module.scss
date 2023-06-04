@@ -1,0 +1,44 @@
+// drawer styles
+
+.drawerContainer {
+  height: 100vh;
+  color: black;
+  background-color: orange;
+  position: absolute;
+  display: none;
+  top: 0;
+  right: 0;
+  z-index: 100;
+}
+
+.drawerContainerIsOpen {
+  display: block;
+  background-color: cadetblue;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  color: var(--text);
+  border-bottom: 1px solid var(--text);
+
+  h1 {
+    font-size: 16px;
+  }
+
+  button {
+    cursor: pointer !important;
+    background: none !important;
+    border: none !important;
+    color: var(--text);
+  }
+}
+
+.content {
+  top: 2rem;
+  position: relative;
+  color: var(--text);
+  padding: 0 1rem;
+}

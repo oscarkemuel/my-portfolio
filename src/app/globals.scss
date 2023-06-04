@@ -56,3 +56,24 @@ hr {
     --background-reverse: #444444;
   }
 }
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--background); 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #575656; 
+  border-radius: 50px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--default-color); 
+}
