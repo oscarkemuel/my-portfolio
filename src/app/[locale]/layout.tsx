@@ -6,10 +6,6 @@ import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
 import { ChangeLangButton } from "@/components/ChangeLangButton";
 
-export function generateStaticParams() {
-  return [{ locale: "pt-BR" }, { locale: "en-US" }];
-}
-
 export const metadata = {
   title: "Oscar Kemuel - React Developer",
   description: "React Developer",
