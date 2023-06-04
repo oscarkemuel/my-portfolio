@@ -16,6 +16,7 @@
 
 html,
 body {
+  scroll-behavior: smooth;
   max-width: 100vw;
   overflow-x: hidden;
   font-family: var(--font-courier), var(--font-inter), sans-serif;
@@ -31,32 +32,6 @@ a {
   text-decoration: none;
 }
 
-hr {
-  background-color: transparent;
-  background-image: url('/hr.svg');
-  background-position: center top;
-  background-repeat: repeat;
-  background-size: 849px 9px;
-  border: none;
-  border-radius: 4.5px;
-  clear: both;
-  display: block;
-  height: 9px;
-  margin: 0 8.3333333333%;
-  outline: none;
-  padding: 0;
-  width: auto;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #FBB969;
-    --background: #FBB969;
-    --default-color: #434343;
-    --background-reverse: #444444;
-  }
-}
-
 /* width */
 ::-webkit-scrollbar {
   width: 10px;
@@ -64,7 +39,7 @@ hr {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: var(--background); 
+  background: #f3c995; 
 }
  
 /* Handle */

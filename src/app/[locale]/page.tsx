@@ -13,13 +13,22 @@ export default function Home() {
         <Apresentation />
       </Section>
 
-      <Hr width="85%" margin="1rem" />
+      <Hr width="80%" fullWidthInMobile />
 
       <Section title={t('projects')} id="projects">
-        <div>
-          <h3>Project 1</h3>
-          <p> teste </p>
-        </div>
+        <div></div>
+      </Section>
+
+      <Hr width="80%" fullWidthInMobile />
+
+      <Section title={t('skills')} id="skills">
+        <div></div>
+      </Section>
+      
+      <Hr width="80%" fullWidthInMobile />
+
+      <Section title={t('contact')} id="contact">
+        <div></div>
       </Section>
     </main>
   );

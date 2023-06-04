@@ -1,26 +1,12 @@
 .container {
-  height: 75vh;
+  min-height: 80vh;
   display: flex;
   align-items: center;
-  justify-content: center;
   flex-direction: column;
-
-  @media screen and (max-width: 768px) {
-    height: 80vh;
-  }
+  padding-top: 4rem;
 }
 
-.containerWithTitle {
-  height: 75vh;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-
-  h2 {
-    margin-bottom: 2rem;
-  }
-
-  @media screen and (max-width: 768px) {
-    height: 80vh;
-  }
+.title {
+  margin-bottom: 2rem;
+  text-decoration: underline;
 }

@@ -9,10 +9,10 @@ interface Props {
 export function Section({ children, id, title }: Props) {
   return (
     <section
-      className={title ? styles.containerWithTitle : styles.container}
+      className={`${styles.container} ${title && styles.withTitle}}`}
       id={id}
     >
-      {title && <h2>{title}</h2>}
+      {title && <h2 className={styles.title}>{title}</h2>}
 
       <div>{children}</div>
     </section>

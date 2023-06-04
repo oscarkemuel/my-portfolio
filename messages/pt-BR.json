@@ -10,6 +10,9 @@
     "contact": "Contato"
   },
   "Section": {
-    "projects": "Projetos"
+    "about": "Sobre",
+    "projects": "Projetos",
+    "skills": "Tecnologias",
+    "contact": "Contato"
   }
 }

@@ -4,6 +4,7 @@ import { Drawer } from "../Drawer";
 import styles from "./styles.module.scss";
 import { FaBars } from "react-icons/fa";
 import { useTranslations } from "next-intl";
+import { Hr } from "../Hr";
 
 export function Navbar() {
   const t = useTranslations("Navbar");
@@ -27,37 +28,32 @@ export function Navbar() {
   return (
     <>
       <header className={styles.container}>
-        <a href="#home">
-          <h1>Oscar Kemuel</h1>
-        </a>
+        <div>
+          <a href="#home">
+            <h1>Oscar Kemuel</h1>
+          </a>
 
-        <nav>
-          <ul className={styles.links}>
-            {sections.map((section, index) => {
-              return (
-                <li key={index}>
-                  <a href={`#${section.id}`} id={`To #${section.id}`}>
-                    {section.name}
-                  </a>
-                </li>
-              );
-            })}
-          </ul>
-        </nav>
+          <nav>
+            <ul className={styles.links}>
+              {sections.map((section, index) => {
+                return (
+                  <li key={index}>
+                    <a href={`#${section.id}`} id={`To #${section.id}`}>
+                      {section.name}
+                    </a>
+                  </li>
+                );
+              })}
+            </ul>
+          </nav>
 
-        <button type="button" onClick={handleShow}>
-          <FaBars size={20} />
-        </button>
+          <button type="button" onClick={handleShow}>
+            <FaBars size={20} />
+          </button>
+        </div>
+
+        <Hr margin="-2.9px 0 0 0" radius="0" />
       </header>
-
-      <hr
-        style={{
-          width: "100%",
-          margin: "0",
-          marginTop: "-2.9px",
-          borderRadius: "0",
-        }}
-      />
 
       <Drawer
         open={isDrawerOpen}

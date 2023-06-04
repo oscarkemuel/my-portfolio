@@ -1,0 +1,22 @@
+.container {
+  background-color: transparent;
+  background-image: url("../../../public/hr.svg");
+  background-position: center top;
+  background-repeat: repeat;
+  background-size: 849px 9px;
+  border: none;
+  border-radius: 4.5px;
+  clear: both;
+  display: block;
+  height: 8px;
+  margin: 0 8.3333333333%;
+  outline: none;
+  padding: 0;
+  width: 100%;
+}
+
+.fullWidthInMobile {
+  @media screen and (max-width: 768px) {
+    width: 100% !important;
+  }
+}
