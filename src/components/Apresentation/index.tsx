@@ -1,8 +1,10 @@
 import Image from "next/image";
 import styles from "./styles.module.scss";
 import { FaGithubSquare, FaLinkedin, FaFileAlt } from "react-icons/fa";
+import { useTranslations } from "next-intl";
 
 export function Apresentation() {
+  const t = useTranslations("Apresentation");
   const age = new Date().getFullYear() - 2002;
 
   const social = [
@@ -36,12 +38,9 @@ export function Apresentation() {
         </div>
 
         <div className={styles.titles}>
-          <h1>Olá, 👋🏽 eu sou Oscar Kemuel</h1>
+          <h1>{t('apresentation')}</h1>
           <h2>React Developer</h2>
-          <p>
-            Sou desenvolvedor web com especialidade em front-end e mobile
-            híbrido. Tenho {age} anos e sou apaixonado por tecnologia.
-          </p>
+          <p>{t('about', {age})}</p>
         </div>
       </div>
 

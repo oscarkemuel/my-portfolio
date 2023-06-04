@@ -13,7 +13,7 @@ interface Props {
   width?: string;
 }
 
-export function Drawer({ open, onClose, children, background, title, width }: Props) {
+export function Drawer({ open, onClose, children, background, title, width = '100vw' }: Props) {
   function staticBody() {
     document.body.style.left = "0";
     document.body.style.position = "fixed";
@@ -59,6 +59,3 @@ export function Drawer({ open, onClose, children, background, title, width }: Pr
   );
 }
 
-Drawer.defaultProps = {
-  width: "100vw",
-}

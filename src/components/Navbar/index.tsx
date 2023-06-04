@@ -3,8 +3,10 @@ import { useState } from "react";
 import { Drawer } from "../Drawer";
 import styles from "./styles.module.scss";
 import { FaBars } from "react-icons/fa";
+import { useTranslations } from "next-intl";
 
 export function Navbar() {
+  const t = useTranslations("Navbar");
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   const handleShow = () => {
@@ -16,10 +18,10 @@ export function Navbar() {
   };
 
   const sections = [
-    { name: "Sobre", id: "about" },
-    { name: "Projetos", id: "projects" },
-    { name: "Tecnologias", id: "skills" },
-    { name: "Contato", id: "contact" },
+    { name: t("about"), id: "about" },
+    { name: t("projects"), id: "projects" },
+    { name: t("skills"), id: "skills" },
+    { name: t("contact"), id: "contact" },
   ];
 
   return (
