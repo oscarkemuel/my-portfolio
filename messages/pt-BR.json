@@ -1,7 +1,8 @@
 {
   "Apresentation": {
     "apresentation": "Olá, 👋🏽 eu sou Oscar Kemuel",
-    "about": "Sou desenvolvedor web com especialidade em front-end e mobile híbrido. Tenho {age} anos e sou apaixonado por tecnologia."
+    "about": "Sou desenvolvedor web com especialidade em front-end e mobile híbrido. Tenho {age} anos e sou apaixonado por tecnologia.",
+    "resume": "Currículo"
   },
   "Navbar": {
     "about": "Sobre",

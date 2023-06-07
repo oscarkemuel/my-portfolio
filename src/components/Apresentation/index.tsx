@@ -1,11 +1,21 @@
 import Image from "next/image";
 import styles from "./styles.module.scss";
 import { FaGithubSquare, FaLinkedin, FaFileAlt } from "react-icons/fa";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 export function Apresentation() {
+  const locale = useLocale();
   const t = useTranslations("Apresentation");
   const age = new Date().getFullYear() - 2002;
+
+  const getResume = (currentLocale: string) => {
+    if (currentLocale === "en-US") {
+      return "https://bit.ly/3J3dMhM";
+    }
+
+    return "https://bit.ly/3P0r9D3";
+  }
+
 
   const social = [
     {
@@ -19,8 +29,8 @@ export function Apresentation() {
       icon: <FaLinkedin size={35} />,
     },
     {
-      name: "Currículo",
-      url: "https://bit.ly/3nVlSOz",
+      name: t('resume'),
+      url: getResume(locale),
       icon: <FaFileAlt size={30} />,
     },
   ];

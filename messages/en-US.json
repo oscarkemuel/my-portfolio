@@ -1,7 +1,8 @@
 {
   "Apresentation": {
     "apresentation": "Hello, 👋🏽 I am Oscar Kemuel",
-    "about": "I am a web developer specialized in front-end and hybrid mobile development. I am {age} years old and passionate about technology."
+    "about": "I am a web developer specialized in front-end and hybrid mobile development. I am {age} years old and passionate about technology.",
+    "resume": "Resume"
   },
   "Navbar": {
     "about": "About",
