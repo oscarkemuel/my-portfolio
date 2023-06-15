@@ -4,6 +4,9 @@ const nextConfig = {
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],
   },
+  images: {
+    domains: ['images.ctfassets.net'],
+  },
 }
 
 const withNextIntl = require('next-intl/plugin')(

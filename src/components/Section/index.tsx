@@ -14,7 +14,7 @@ export function Section({ children, id, title }: Props) {
     >
       {title && <h2 className={styles.title}>{title}</h2>}
 
-      <div>{children}</div>
+      {children}
     </section>
   );
 }
