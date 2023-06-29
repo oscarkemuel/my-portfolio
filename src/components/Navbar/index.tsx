@@ -2,9 +2,13 @@
 import { useState } from "react";
 import { Drawer } from "../Drawer";
 import styles from "./styles.module.scss";
-import { FaBars } from "react-icons/fa";
+import { MdClose } from "react-icons/md";
 import { useTranslations } from "next-intl";
-import { Hr } from "../Hr";
+import Image from "next/image";
+import camIcon from '../../../public/cam.svg'
+import micIcon from '../../../public/mic.svg'
+import searchIcon from '../../../public/search.svg'
+import applicationsIcon from '../../../public/applications.svg'
 
 export function Navbar() {
   const t = useTranslations("Navbar");
@@ -28,31 +32,61 @@ export function Navbar() {
   return (
     <>
       <header className={styles.container}>
-        <div>
-          <a href="#home">
-            <h1>Oscar Kemuel</h1>
-          </a>
+        <div className={styles.searchContainer}>
+          <Image
+            src="https://white.logodownload.org/wp-content/uploads/2020/11/google-white-logo.png"
+            alt="Foto do autor Oscar Kemuel"
+            fill={true}
+            className={styles.image}
+          />
 
-          <nav>
-            <ul className={styles.links}>
-              {sections.map((section, index) => {
-                return (
-                  <li key={index}>
-                    <a href={`#${section.id}`} id={`To #${section.id}`}>
-                      {section.name}
-                    </a>
-                  </li>
-                );
-              })}
-            </ul>
-          </nav>
+          <div className={styles.search}>
+            <input type="text" value={"Oscar Kemuel"} spellCheck={false} />
 
-          <button type="button" onClick={handleShow}>
-            <FaBars size={20} />
-          </button>
+            <div>
+              <MdClose size={20} color="#9aa0a6" />
+
+              <span className={styles.hrVertical}></span>
+
+              <Image
+                height={24}
+                width={24}
+                src={micIcon}
+                alt=""
+              />
+
+              <Image
+                height={24}
+                width={24}
+                src={camIcon}
+                alt=""
+              />
+
+              <Image
+                height={24}
+                width={24}
+                src={searchIcon}
+                alt=""
+              />
+            </div>
+          </div>
+
+          <div className={styles.buttons}>
+            <Image
+              height={24}
+              width={24}
+              src={applicationsIcon}
+              alt=""
+            />
+
+            <a
+              target="_top"
+              className={styles.button}
+            >
+              <span>Contratar</span>
+            </a>
+          </div>
         </div>
-
-        <Hr margin="-2.9px 0 0 0" radius="0" />
       </header>
 
       <Drawer

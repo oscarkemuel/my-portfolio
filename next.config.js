@@ -4,6 +4,10 @@ const nextConfig = {
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],
   },
+
+  images: {
+    domains: ['white.logodownload.org'],
+  }
 }
 
 const withNextIntl = require('next-intl/plugin')(

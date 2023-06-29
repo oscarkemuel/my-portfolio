@@ -1,47 +1,101 @@
 .container {
-  position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
-  z-index: 998;
-  
-  div {
-    width: 100%;
-    background: var(--background-reverse);
-    opacity: 1;
-    width: 100%;
+  display: flex;
+  padding: 30px 28px;
+}
+
+.searchContainer {
+  width: 100%;
+  display: flex;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  background: var(--background-light);
+  margin-left: 42px;
+  width: 690px;
+  height: 44px;
+  border-radius: 24px;
+  padding: 0 14px;
+  border: none;
+
+  input {
+    background: transparent;
+    border: none;
+    height: 100%;
+    box-sizing: border-box;
+    transition: all .2s ease-in-out;
+    margin: 0 13px;
+    border: none;
+    background-color: transparent;
     display: flex;
-    -webkit-box-align: center;
-    align-items: center;
-    -webkit-box-pack: justify;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    padding: 1rem;
-
-    color: var(--text);
-
-    h1 {
-      font-size: 16px;
-    }
-
-    button {
-      display: none;
-      background: none;
-      border: none;
-      cursor: pointer;
-      color: var(--text);
-    }
-
-    @media screen and (max-width: 570px) {
-      ul {
-        display: none;
-      }
-
-      button {
-        display: block;
-      }
-    }
+    flex: 1 1;
+    height: 34px;
+    font-size: 16px;
+    margin-left: 4px;
+    caret-color: #e8eaed;
+    color: #e8eaed;
   }
+
+  input:focus {
+    outline: none;
+  }
+
+  div {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    
+  }
+}
+
+.hrVertical {
+  border-left: 1px solid #5f6368;
+  height: 20px;
+  width: 1px;
+}
+
+.image {
+  object-fit: contain;
+  width: 100px !important;
+  height: 30px !important;
+  position: relative !important;
+  height: unset !important;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+}
+
+.button {
+  color-scheme: dark;
+  font: 13px/27px Roboto,Arial,sans-serif;
+  white-space: nowrap;
+  -webkit-tap-highlight-color: rgba(255,255,255,.1);
+  display: inline-block;
+  font-size: 14px;
+  letter-spacing: .25px;
+  line-height: 16px;
+  margin-right: 8px;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 4px;
+  box-sizing: border-box;
+  outline: 0;
+  margin-left: 8px;
+  padding: 9px 15px;
+  min-width: 80px;
+  text-decoration: none;
+  cursor: pointer;
+  background: #8ab4f8;
+  border: 1px solid transparent;
+  box-shadow: none;
+  color: #202124;
 }
 
 .links {

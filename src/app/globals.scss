@@ -2,10 +2,9 @@
   --max-width: 1100px;
   --border-radius: 12px;
 
-  --text: #FBB969;
-  --background: #FBB969;
-  --default-color: #434343;
-  --background-reverse: #444444;
+  --text: #bdc1c6;
+  --background: #202124;
+  --background-light: #303134;
 }
 
 * {
@@ -23,7 +22,7 @@ body {
 }
 
 body {
-  color: var(--default-color);
+  color: var(--text);
   background: var(--background);
 }
 
@@ -34,17 +33,17 @@ a {
 
 /* width */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 5px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #f3c995; 
+  background: var(--background); 
 }
  
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #575656; 
+  background: var(--text);
   border-radius: 50px;
 }
 
