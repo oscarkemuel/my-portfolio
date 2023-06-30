@@ -1,40 +1,56 @@
-import { contentfulApi } from '@/services/contentful';
-import Contentful from 'contentful'
-import { useLocale } from 'next-intl';
+/* eslint-disable @next/next/no-img-element */
+import { contentfulApi } from "@/services/contentful";
+import { useLocale } from "next-intl";
+import { Card } from "../Card";
 
-type  Project = {
-  contentTypeId: "project",
-  fields: {
-    title: Contentful.EntryFields.Text,
-    description: Contentful.EntryFields.Text,
-    image: Contentful.Asset,
-    locale: Contentful.EntryFields.Text
-  }
+type Project = {
+  title: string;
+  description: string;
+  image: {
+    fields: {
+      file: {
+        url: string;
+      };
+    }
+  };
+  githubSlug?: string;
+  url?: string;
+};
+
+interface Projects {
+  fields: Project;
 }
 
 async function getProjects(locale: string) {
-  const response = await contentfulApi.getEntries<Project>({
-    locale
-  })
+  const response = await contentfulApi.getEntries({
+    locale,
+  });
 
-  return response.items;
+  return response.items as unknown as Projects[];
 }
 
 export async function Projects() {
   const locale = useLocale();
 
   const projects = await getProjects(locale);
-  console.log(projects);
 
   return (
     <div>
-      {projects.map(project => (
-        <div key={project.sys.id}>
-          <h1>{project.fields.title}</h1>
-          <p>{project.fields.description}</p>
-          <img src={project.fields.image} alt={'project.fields.image'} />
-        </div>
-      ))}
+      {projects.map(({fields}) => {
+        const project = fields;
+        const image = project.image.fields.file?.url as string;
+
+        return (
+          <Card 
+          key={project.title}
+          description={project.description}
+          imageUrl={image}
+          title={project.title}
+          githubSlug={project.githubSlug}
+          url={project.url}
+        />
+        );
+      })}
     </div>
   );
 }
