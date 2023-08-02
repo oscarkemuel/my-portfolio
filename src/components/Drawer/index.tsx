@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import styles from "./styles.module.scss";
 import { IoClose } from "react-icons/io5";
+import Link from "next/link";
 
 interface Props {
   open: boolean;
@@ -11,9 +12,10 @@ interface Props {
   background?: string;
   title?: string;
   width?: string;
+  linkTitle?: string;
 }
 
-export function Drawer({ open, onClose, children, background, title, width = '100vw' }: Props) {
+export function Drawer({ open, onClose, children, background, title, width = '100vw', linkTitle }: Props) {
   function staticBody() {
     document.body.style.left = "0";
     document.body.style.position = "fixed";
@@ -47,7 +49,7 @@ export function Drawer({ open, onClose, children, background, title, width = '10
       }}
     >
       <div className={styles.header}>
-        <h1>{title}</h1>
+        <h1>{linkTitle ? <Link href={linkTitle} onClick={onClose}>{title}</Link> : title}</h1>
 
         <button type="button" onClick={onClose}>
           <IoClose size={20} />

@@ -39,12 +39,14 @@ export function Apresentation() {
     <div className={styles.container}>
       <div className={styles.containerMain}>
         <div className={styles.imageContainer}>
-          <Image
-            src="/emoji.png"
-            alt="Foto do autor Oscar Kemuel"
-            fill={true}
-            className={styles.image}
-          />
+          <figure>
+            <Image
+              src="/emoji.png"
+              alt="Foto do autor Oscar Kemuel"
+              fill={true}
+              className={styles.image}
+            />
+          </figure>
         </div>
 
         <div className={styles.titles}>
