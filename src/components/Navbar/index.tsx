@@ -5,6 +5,7 @@ import styles from "./styles.module.scss";
 import { FaBars } from "react-icons/fa";
 import { useTranslations } from "next-intl";
 import { Hr } from "../Hr";
+import Link from "next/link";
 
 export function Navbar() {
   const t = useTranslations("Navbar");
@@ -19,29 +20,29 @@ export function Navbar() {
   };
 
   const sections = [
-    { name: t("about"), id: "about" },
-    { name: t("experiences"), id: "experiences"},
-    { name: t("projects"), id: "projects" },
-    { name: t("skills"), id: "skills" },
-    { name: t("contact"), id: "contact" },
+    { name: t("about"), href: "about" },
+    { name: t("experiences"), href: "experiences"},
+    { name: t("projects"), href: "projects" },
+    { name: t("skills"), href: "skills" },
+    { name: t("contact"), href: "contact" },
   ];
 
   return (
     <>
       <header className={styles.container}>
         <div>
-          <a href="#home">
+          <Link href={'/'}>
             <h1>Oscar Kemuel</h1>
-          </a>
+          </Link>
 
           <nav>
             <ul className={styles.links}>
               {sections.map((section, index) => {
                 return (
                   <li key={index}>
-                    <a href={`#${section.id}`} id={`To #${section.id}`}>
+                    <Link href={`${section.href}`} id={`To #${section.href}`}>
                       {section.name}
-                    </a>
+                    </Link>
                   </li>
                 );
               })}
@@ -61,19 +62,20 @@ export function Navbar() {
         onClose={handleClose}
         background="var(--background-reverse)"
         title="Oscar Kemuel"
+        linkTitle="/"
       >
         <nav>
           <ul className={styles.contentDrawer}>
             {sections.map((section, index) => {
               return (
                 <li key={index}>
-                  <a
-                    href={`#${section.id}`}
-                    id={`To #${section.id}`}
+                  <Link
+                    href={`${section.href}`}
+                    id={`To #${section.href}`}
                     onClick={handleClose}
                   >
                     {section.name}
-                  </a>
+                  </Link>
                 </li>
               );
             })}
