@@ -21,7 +21,6 @@ export function Navbar() {
 
   const sections = [
     { name: t("about"), href: "about" },
-    { name: t("experiences"), href: "experiences"},
     { name: t("projects"), href: "projects" },
     { name: t("skills"), href: "skills" },
     { name: t("contact"), href: "contact" },

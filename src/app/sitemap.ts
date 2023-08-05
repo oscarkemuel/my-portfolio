@@ -15,10 +15,6 @@ function generatePages(lang: 'pt-BR/' | 'en-US/' | '') {
       lastModified: new Date(),
     },
     {
-      url: `${process.env.SITE_URL || 'https://oscarkemuel.com'}/${lang}experiences`,
-      lastModified: new Date(),
-    },
-    {
       url: `${process.env.SITE_URL || 'https://oscarkemuel.com'}/${lang}projects`,
       lastModified: new Date(),
     },

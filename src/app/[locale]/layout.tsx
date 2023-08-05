@@ -5,10 +5,10 @@ import { useLocale } from "next-intl";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
 import { ChangeLangButton } from "@/components/ChangeLangButton";
+import { generateMetadata } from "@/utils/generateMetadata";
 
 export const metadata = {
-  title: "Oscar Kemuel - React Developer",
-  description: "React Developer",
+  ...generateMetadata({}),
 };
 
 export default async function RootLayout({

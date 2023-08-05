@@ -5,6 +5,14 @@ import { useLocale } from "next-intl";
 import { Projects } from "./types";
 import { getFileUrl } from "@/utils/getFileUrl";
 import styles from "./projects.module.scss";
+import { generateMetadata } from "@/utils/generateMetadata";
+
+export const metadata = {
+  ...generateMetadata({
+    title: "Projetos",
+    routePathName: "projects",
+  }),
+};
 
 async function getProjects(locale: string) {
   const response = await getEntries({
