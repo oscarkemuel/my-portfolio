@@ -4,7 +4,7 @@
   height: 100vh;
   color: black;
   background-color: orange;
-  position: absolute;
+  position: fixed;
   display: none;
   top: 0;
   right: 0;
@@ -37,8 +37,8 @@
 }
 
 .content {
+  height: 100vh;
   top: 2rem;
-  position: relative;
   color: var(--text);
   padding: 0 1rem;
 }

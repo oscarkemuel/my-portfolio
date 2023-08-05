@@ -1,8 +1,8 @@
 'use client'
  
-import { usePathname } from 'next/navigation'
-import Link from "next-intl/link";
+import Link from 'next-intl/link';
 import styles from "./styles.module.scss";
+import { usePathname } from 'next-intl/client';
 
 interface Props {
   locale: string;
@@ -16,16 +16,9 @@ export function ChangeLangButton({ locale }: Props) {
     if (locale === "en-US") return "pt-BR"
   };
 
-  const getNewPath = () => {
-    if (getNewLocale() === "en-US") return `${pathname}`
-    if (getNewLocale() === "pt-BR") return pathname.replace("en-US/", "")
-
-    return pathname
-  }
-
   return (
     <div className={styles.container}>
-      <Link href={`${getNewPath()}`} locale={getNewLocale()} hrefLang={getNewLocale()}>
+      <Link href={pathname} locale={getNewLocale()}>
         {getNewLocale() === "pt-BR" ? "🇧🇷" : "🇺🇸"}
       </Link>
     </div>
