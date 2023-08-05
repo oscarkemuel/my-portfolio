@@ -13,10 +13,12 @@ interface IProps {
 }
 
 export function generateMetadata({ description, metadataBase, routePathName, title, author, keywords }: IProps): Metadata {
+  const defaultUrl = 'https://oscarkemuel.com';
+
   return {
-    title: `Oscar Kemuel - ${title || 'React Developer'}`,
+    title: `Oscar Kemuel | ${title || 'React Developer'}`,
     description: description || 'React Developer',
-    metadataBase: metadataBase || new URL(process.env.SITE_URL || 'https://oscarkemuel.com'),
+    metadataBase: metadataBase || new URL(process.env.SITE_URL || defaultUrl),
     alternates: {
       canonical: routePathName || '',
       languages: {
@@ -26,7 +28,7 @@ export function generateMetadata({ description, metadataBase, routePathName, tit
     },
     authors: {
       name: author?.name || 'Oscar Kemuel',
-      url: author?.url || process.env.SITE_URL || 'https://oscarkemuel.com',
+      url: author?.url || process.env.SITE_URL || defaultUrl,
     },
     keywords: keywords || [
       'Oscar Kemuel',

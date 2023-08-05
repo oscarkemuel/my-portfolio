@@ -2,6 +2,7 @@ import { FaLocationArrow } from "react-icons/fa";
 import { AiFillGithub } from "react-icons/ai";
 import styles from "./styles.module.scss";
 import { DateFormat } from "./DateFormat";
+import Image from "next/image";
 
 interface CardProps {
   title: string;
@@ -20,10 +21,16 @@ export function Card({
   url,
   updatedAt,
 }: CardProps) {
-
   return (
     <div className={styles.container}>
-      <img src={imageUrl} alt="" srcSet="" />
+      <figure className={styles.imageContainer}>
+        <Image 
+          alt="Imagem do projeto"
+          src={imageUrl}
+          fill={true}
+          className={styles.image}
+        />
+      </figure>
 
       <div className={styles.content}>
         <div className="title">

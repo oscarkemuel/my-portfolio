@@ -1,25 +1,27 @@
 import { MetadataRoute } from 'next'
 
 function generatePages(lang: 'pt-BR/' | 'en-US/' | '') {
+  const defaultUrl = 'https://oscarkemuel.com';
+  
   const pages = [
     {
-      url: `${process.env.SITE_URL || 'https://oscarkemuel.com'}/${lang}`,
+      url: `${process.env.SITE_URL || defaultUrl}/${lang}`,
       lastModified: new Date(),
     },
     {
-      url: `${process.env.SITE_URL || 'https://oscarkemuel.com'}/${lang}about`,
+      url: `${process.env.SITE_URL || defaultUrl}/${lang}about`,
       lastModified: new Date(),
     },
     {
-      url: `${process.env.SITE_URL || 'https://oscarkemuel.com'}/${lang}contact`,
+      url: `${process.env.SITE_URL || defaultUrl}/${lang}contact`,
       lastModified: new Date(),
     },
     {
-      url: `${process.env.SITE_URL || 'https://oscarkemuel.com'}/${lang}projects`,
+      url: `${process.env.SITE_URL || defaultUrl}/${lang}projects`,
       lastModified: new Date(),
     },
     {
-      url: `${process.env.SITE_URL || 'https://oscarkemuel.com'}/${lang}skills`,
+      url: `${process.env.SITE_URL || defaultUrl}/${lang}skills`,
       lastModified: new Date(),
     },
   ]

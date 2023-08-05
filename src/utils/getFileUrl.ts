@@ -8,5 +8,5 @@ interface Props {
 export function getFileUrl({ id, includes }: Props) {
   const asset = includes.Asset?.find((asset) => asset.sys.id === id);
 
-  return asset?.fields.file.url;
+  return `https:${asset?.fields.file.url}`;
 }
