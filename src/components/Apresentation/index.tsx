@@ -21,17 +21,17 @@ export function Apresentation() {
     {
       name: "Github",
       url: "https://github.com/oscarkemuel",
-      icon: <FaGithubSquare size={35} />,
+      icon: <FaGithubSquare size={35} color="#f1f1f1" />,
     },
     {
       name: "Linkedin",
       url: "https://www.linkedin.com/in/oscar-kemuel/",
-      icon: <FaLinkedin size={35} />,
+      icon: <FaLinkedin size={35} color="#0072b1" />,
     },
     {
       name: t('resume'),
       url: getResume(locale),
-      icon: <FaFileAlt size={30} />,
+      icon: <FaFileAlt size={30} color="var(--red)" />,
     },
   ];
 
@@ -51,7 +51,7 @@ export function Apresentation() {
 
         <div className={styles.titles}>
           <h1>{t('apresentation')}</h1>
-          <h2>React Developer</h2>
+          <h2><span style={{color: 'var(--blue)'}}>React</span> Developer</h2>
           <p>{t('about', {age})}</p>
         </div>
       </div>

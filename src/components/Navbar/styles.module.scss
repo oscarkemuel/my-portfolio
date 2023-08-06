@@ -12,12 +12,13 @@
     -webkit-box-pack: justify;
     justify-content: space-between;
     flex-wrap: wrap;
-    padding: 1rem;
+    padding: 1.5rem 1rem;
 
     color: var(--text);
 
     h1 {
       font-size: 16px;
+      color: var(--blue);
     }
 
     button {
