@@ -53,7 +53,7 @@ export function Navbar() {
           </button>
         </div>
 
-        <Hr margin="-2.9px 0 0 0" radius="0" />
+        {/* <Hr margin="-2.9px 0 0 0" radius="0" /> */}
       </header>
 
       <Drawer

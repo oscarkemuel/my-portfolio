@@ -12,7 +12,7 @@ export const getEntries = async ({ contentType, revalidateInHours, locale }: IGe
       next: {
         revalidate: revalidateInHours ? (60 * 60 * Number(revalidateInHours)) : false,
       },
-      cache: 'no-cache',
+      // cache: 'no-cache',
     }
   );
 
