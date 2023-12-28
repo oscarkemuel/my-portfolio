@@ -1,8 +1,7 @@
 'use client'
  
-import Link from 'next-intl/link';
+import { Link, usePathname } from "@/navigation";
 import styles from "./styles.module.scss";
-import { usePathname } from 'next-intl/client';
 
 interface Props {
   locale: string;
