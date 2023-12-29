@@ -1,16 +1,12 @@
-'use client'
-
 import { formatDate } from "@/utils/dateUtils";
-import { useLocale } from "use-intl";
+import { useLocale } from "next-intl";
 
 interface DateFormatProps {
   date: string;
 }
 
-export const DateFormat = ({date}: DateFormatProps) => {
+export const DateFormat = ({ date }: DateFormatProps) => {
   const locale = useLocale();
 
-  return (
-    <>{formatDate(date, locale)}</>
-  )
-}
+  return <>{formatDate(date, locale)}</>;
+};
