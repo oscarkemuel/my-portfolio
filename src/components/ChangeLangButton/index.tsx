@@ -1,26 +1,40 @@
-'use client'
- 
-import Link from 'next-intl/link';
+"use client";
+
+import { usePathname, useRouter } from "@/navigation";
 import styles from "./styles.module.scss";
-import { usePathname } from 'next-intl/client';
 
-interface Props {
-  locale: string;
-}
+export function ChangeLangButton() {
+  const pathname = usePathname();
+  const router = useRouter();
 
-export function ChangeLangButton({ locale }: Props) {
-  const pathname = usePathname()
-
-  const getNewLocale = () => {
-    if (locale === "pt-BR") return "en-US"
-    if (locale === "en-US") return "pt-BR"
-  };
+  const langs = [
+    {
+      icon: "🇧🇷",
+      locale: "pt-BR",
+    },
+    {
+      icon: "🇺🇸",
+      locale: "en-US",
+    },
+  ];
 
   return (
     <div className={styles.container}>
-      <Link href={pathname} locale={getNewLocale()}>
-        {getNewLocale() === "pt-BR" ? "🇧🇷" : "🇺🇸"}
-      </Link>
+      {langs.map((lang, index) => {
+        return (
+          <button
+            key={index}
+            onClick={() => {
+              router.push(pathname, {
+                locale: lang.locale,
+              });
+              router.refresh();
+            }}
+          >
+            {lang.icon}
+          </button>
+        );
+      })}
     </div>
   );
 }

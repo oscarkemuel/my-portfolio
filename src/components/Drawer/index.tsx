@@ -1,13 +1,13 @@
 "use client";
 
-import { useEffect } from "react";
 import styles from "./styles.module.scss";
 import { IoClose } from "react-icons/io5";
 import Link from "next/link";
+import { useRouter } from "@/navigation";
 
 interface Props {
   open: boolean;
-  onClose: () => void;
+  onClose?: () => void;
   children?: React.ReactNode;
   background?: string;
   title?: string;
@@ -16,27 +16,7 @@ interface Props {
 }
 
 export function Drawer({ open, onClose, children, background, title, width = '100vw', linkTitle }: Props) {
-  function staticBody() {
-    document.body.style.left = "0";
-    document.body.style.position = "fixed";
-    document.body.style.top = "0";
-    document.body.style.width = "100%";
-  }
-
-  function autoBody() {
-    document.body.style.left = "auto";
-    document.body.style.position = "static";
-    document.body.style.top = "auto";
-    document.body.style.width = "auto";
-  }
-
-  useEffect(() => {
-    if (open) {
-      staticBody();
-    } else {
-      autoBody();
-    }
-  }, [open]);
+  const { back } = useRouter();
 
   return (
     <div
@@ -49,9 +29,9 @@ export function Drawer({ open, onClose, children, background, title, width = '10
       }}
     >
       <div className={styles.header}>
-        <h1>{linkTitle ? <Link href={linkTitle} onClick={onClose}>{title}</Link> : title}</h1>
+        <h1>{linkTitle ? <Link href={linkTitle} onClick={onClose || back}>{title}</Link> : title}</h1>
 
-        <button type="button" onClick={onClose}>
+        <button type="button" onClick={onClose || back}>
           <IoClose size={20} />
         </button>
       </div>
