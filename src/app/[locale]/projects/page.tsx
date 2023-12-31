@@ -1,9 +1,7 @@
 import { Section } from "@/components/Section";
 import { Card } from "@/components/Card";
-import { getEntries } from "@/services/contentful";
+import { getAllProjects } from "@/services/contentful";
 import { useLocale } from "next-intl";
-import { Projects } from "./types";
-import { getFileUrl } from "@/utils/getFileUrl";
 import styles from "./projects.module.scss";
 import { generateMetadata } from "@/utils/generateMetadata";
 
@@ -15,10 +13,9 @@ export const metadata = {
 };
 
 async function getProjects(locale: string) {
-  const response = await getEntries({
-    contentType: "project",
+  const response = await getAllProjects({
     locale,
-    revalidateInHours: 12
+    revalidateInHours: 12,
   });
 
   return response;
@@ -26,29 +23,25 @@ async function getProjects(locale: string) {
 
 export default async function Project() {
   const locale = useLocale();
-  const projects = await getProjects(locale);
-
-  const fields = projects.items as Projects[];
+  const { projects } = await getProjects(locale);
 
   return (
     <main>
       <Section>
         <div className={styles.projects}>
-          {fields.map(({ fields: project }) => {
-            const image = getFileUrl({
-              id: project.image.sys.id,
-              includes: projects.includes!,
-            });
+          {projects.map((project) => {
+            const { description, image, title, updatedAt, githubSlug, url } =
+              project;
 
             return (
               <Card
-                key={project.title}
-                description={project.description}
-                imageUrl={image!}
-                title={project.title}
-                githubSlug={project.githubSlug}
-                url={project.url}
-                updatedAt={project.updatedAt}
+                key={title}
+                description={description}
+                imageUrl={image}
+                title={title}
+                githubSlug={githubSlug}
+                url={url}
+                updatedAt={updatedAt}
               />
             );
           })}

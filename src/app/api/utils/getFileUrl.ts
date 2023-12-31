@@ -1,4 +1,4 @@
-import { Includes } from "@/services/contentful/types";
+import { Includes } from "../urls/contentful/types";
 
 interface Props {
   id: string;
