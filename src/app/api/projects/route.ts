@@ -19,13 +19,19 @@ export async function GET(req: Request) {
     const { items, includes } = await getEntries(configEntries);
     responseProjects = { items, includes };
   } catch (error) {
-    NextResponse.json({ error });
+    NextResponse.json(
+      {
+        message: "An error occurred while trying to get the projects.",
+      },
+      {
+        status: 500,
+      }
+    );
   }
 
   projects = responseProjects.items.map((item) => {
-    const { fields, sys } = item;
-    const { updatedAt } = sys;
-    const { title, description, image, githubSlug, url } = fields;
+    const { fields } = item;
+    const { title, description, image, githubSlug, url, updatedAt } = fields;
 
     const imageUrl = getFileUrl({
       id: image.sys.id,
