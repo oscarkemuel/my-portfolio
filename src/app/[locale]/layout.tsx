@@ -26,7 +26,7 @@ export default async function RootLayout({
       <body>
         <Navbar />
         {children}
-        <ChangeLangButton />
+        <ChangeLangButton locale={locale} />
         <Analytics />
         <SpeedInsights />
       </body>
