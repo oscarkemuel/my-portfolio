@@ -1,10 +1,12 @@
 import { IGetAllProjects, IGetAllProjectsResponse } from "./types";
 
+const NEXT_PUBLIC_BFF_URL = process.env.NEXT_PUBLIC_BFF_URL;
+
 export const getAllProjects = async ({
   revalidateInHours,
   locale,
 }: IGetAllProjects) => {
-  const route = `http://localhost:3000/api/projects?locale=${locale || "pt-BR"}`;
+  const route = `${NEXT_PUBLIC_BFF_URL}/projects?locale=${locale || "pt-BR"}`;
   const response = await fetch(route, {
     next: {
       revalidate: revalidateInHours
