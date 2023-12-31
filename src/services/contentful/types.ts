@@ -1,23 +1,17 @@
-export interface IGetEntries {
-  contentType: string;
+interface IGetGeneric {
   revalidateInHours?: number;
   locale?: string;
 }
 
-export interface Includes {
-  Asset?: {
-    sys: {
-      id: string;
-    },
-    fields: {
-      file: {
-        url: string;
-      }
-    }
-  }[];
-}
-
-export interface IGetEntriesResponse {
-  items: Array<any>;
-  includes?: Includes;
+export type IProject = {
+  title: string;
+  description: string;
+  image: string;
+  githubSlug?: string;
+  url?: string;
+  updatedAt: string;
+};
+export interface IGetAllProjects extends IGetGeneric {}
+export interface IGetAllProjectsResponse {
+  projects: IProject[];
 }
