@@ -2,7 +2,7 @@ import { Section } from "@/components/Section";
 import { generateMetadata } from "@/utils/generateMetadata";
 import Image from "next/image";
 import styles from "./about.module.scss";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import Experiences from "./Experiences";
 
 export const metadata = {
@@ -13,6 +13,7 @@ export const metadata = {
 };
 
 export default function About() {
+  const locale = useLocale();
   const t = useTranslations("About");
 
   return (
@@ -38,9 +39,9 @@ export default function About() {
           </div>
 
           <div className={styles.expecienceContainer}>
-            <h2>{t("experiences-title")}</h2>
+            {/* <h2>{t("experiences-title")}</h2> */}
 
-            <Experiences />
+            {/* <Experiences locale={locale} /> */}
           </div>
         </div>
       </Section>
