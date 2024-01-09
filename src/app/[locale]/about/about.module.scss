@@ -1,0 +1,48 @@
+.container {
+  padding: 0 2rem;
+  width: 100%;
+  margin-bottom: 4rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.aboutContainer {
+  max-width: 70vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+
+  @media screen and (max-width: 768px) {
+    gap: 1rem;
+    flex-direction: column;
+  }
+}
+
+.imageContainer {
+  min-width: 16vw;
+
+  div {
+    position: unset !important;
+  }
+
+  .image {
+    object-fit: contain;
+    width: 100% !important;
+    position: relative !important;
+    height: unset !important;
+  }
+
+  @media screen and (max-width: 1024px) {
+    min-width: 20vw;
+  }
+
+  @media screen and (max-width: 768px) {
+    min-width: 30vw;
+  }
+}
+
+.expecienceContainer {
+}

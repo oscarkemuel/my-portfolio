@@ -7,9 +7,9 @@ export function Navbar() {
   const t = useTranslations("Navbar");
 
   const sections = [
+    { name: t("home"), href: "/" },
     { name: t("about"), href: "about" },
     { name: t("projects"), href: "projects" },
-    { name: t("skills"), href: "skills" },
     { name: t("contact"), href: "contact" },
   ];
 

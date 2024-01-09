@@ -21,7 +21,7 @@ export function Apresentation() {
     {
       name: "Github",
       url: "https://github.com/oscarkemuel",
-      icon: <FaGithubSquare size={35} color="#f1f1f1" />,
+      icon: <FaGithubSquare size={35} color="var(--white)" />,
     },
     {
       name: "Linkedin",
@@ -31,7 +31,7 @@ export function Apresentation() {
     {
       name: t('resume'),
       url: getResume(locale),
-      icon: <FaFileAlt size={30} color="var(--red)" />,
+      icon: <FaFileAlt size={30} color="var(--white)" />,
     },
   ];
 
