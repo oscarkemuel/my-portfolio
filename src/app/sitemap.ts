@@ -1,27 +1,28 @@
 import { MetadataRoute } from 'next'
 
-function generatePages(lang: 'pt-BR/' | 'en-US/' | '') {
+function generatePages() {
   const defaultUrl = 'https://oscarkemuel.com';
   
   const pages = [
     {
-      url: `${process.env.SITE_URL || defaultUrl}/${lang}`,
+      url: `${process.env.SITE_URL || defaultUrl}`,
+      lastModified: new Date(),
+      priority: 1,
+    },
+    {
+      url: `${process.env.SITE_URL || defaultUrl}/about`,
       lastModified: new Date(),
     },
     {
-      url: `${process.env.SITE_URL || defaultUrl}/${lang}about`,
+      url: `${process.env.SITE_URL || defaultUrl}/contact`,
       lastModified: new Date(),
     },
     {
-      url: `${process.env.SITE_URL || defaultUrl}/${lang}contact`,
+      url: `${process.env.SITE_URL || defaultUrl}/projects`,
       lastModified: new Date(),
     },
     {
-      url: `${process.env.SITE_URL || defaultUrl}/${lang}projects`,
-      lastModified: new Date(),
-    },
-    {
-      url: `${process.env.SITE_URL || defaultUrl}/${lang}skills`,
+      url: `${process.env.SITE_URL || defaultUrl}/skills`,
       lastModified: new Date(),
     },
   ]
@@ -30,5 +31,5 @@ function generatePages(lang: 'pt-BR/' | 'en-US/' | '') {
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [...generatePages('')]
+  return [...generatePages()]
 }
