@@ -36,12 +36,14 @@ export default async function Project() {
             return (
               <Card
                 key={title}
-                description={description}
-                imageUrl={image}
-                title={title}
-                githubSlug={githubSlug}
-                url={url}
-                updatedAt={updatedAt}
+                data={{
+                  description,
+                  imageUrl: image,
+                  title,
+                  updatedAt,
+                  githubSlug,
+                  url,
+                }}
               />
             );
           })}

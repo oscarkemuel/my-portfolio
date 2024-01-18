@@ -8,5 +8,5 @@ interface DateFormatProps {
 export const DateFormat = ({ date }: DateFormatProps) => {
   const locale = useLocale();
 
-  return <>{formatDate(date, locale)}</>;
+  return <span>{formatDate(date, locale)}</span>;
 };

@@ -39,9 +39,9 @@ export default function About() {
           </div>
 
           <div className={styles.expecienceContainer}>
-            {/* <h2>{t("experiences-title")}</h2> */}
+            <h2>{t("experiences-title")}</h2>
 
-            {/* <Experiences locale={locale} /> */}
+            <Experiences locale={locale} />
           </div>
         </div>
       </Section>

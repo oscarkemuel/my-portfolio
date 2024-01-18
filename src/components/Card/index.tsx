@@ -13,18 +13,17 @@ interface CardProps {
   updatedAt?: string;
 }
 
+interface IProps {
+  data: CardProps;
+}
+
 export function Card({
-  title,
-  description,
-  imageUrl,
-  githubSlug,
-  url,
-  updatedAt,
-}: CardProps) {
+  data: { title, description, imageUrl, githubSlug, url, updatedAt },
+}: IProps) {
   return (
     <div className={styles.container}>
       <figure className={styles.imageContainer}>
-        <Image 
+        <Image
           alt="Imagem do projeto"
           src={imageUrl}
           fill={true}
