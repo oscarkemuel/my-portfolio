@@ -1,0 +1,54 @@
+.form {
+  width: 100%;
+  max-width: 600px;
+  padding: 20px;
+
+  .form-group {
+    display: flex;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    margin-bottom: 20px;
+    background: transparent;
+    border: 1px solid var(--text);
+    padding: 10px;
+    border-radius: 5px;
+    color: var(--text);
+  }
+
+  textarea {
+    height: 200px;
+  }
+
+  button {
+    width: 100%;
+    background: var(--text);
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    color: #000;
+    border-radius: 5px;
+
+    &:disabled {
+      background: var(--text);
+      color: #000;
+      cursor: not-allowed;
+    }
+  }
+}
+
+.iconLoading {
+  margin: 0;
+  animation: spin 2s linear infinite;
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}

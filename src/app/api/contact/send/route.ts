@@ -26,7 +26,6 @@ export async function POST(req: Request) {
       email_id: data.data?.id || null,
     });
   } catch (error) {
-    console.error(error);
-    return Response.json({ error });
+    return Response.json({ error }, { status: 400 });
   }
 }
