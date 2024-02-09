@@ -83,7 +83,7 @@ export const EmailForm = ({ translations }: IProps) => {
         </div>
 
         <div>
-          <label htmlFor="message">{formTrans.messageLabel}</label>
+          <label htmlFor="message">{formTrans.messageLabel} (10-500)</label>
           <textarea
             id="message"
             name="message"
