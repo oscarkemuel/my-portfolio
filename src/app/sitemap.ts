@@ -20,11 +20,7 @@ function generatePages() {
     {
       url: `${process.env.SITE_URL || defaultUrl}/projects`,
       lastModified: new Date(),
-    },
-    {
-      url: `${process.env.SITE_URL || defaultUrl}/skills`,
-      lastModified: new Date(),
-    },
+    }
   ]
 
   return pages

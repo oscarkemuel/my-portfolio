@@ -23,5 +23,15 @@
     "experiences": {
       "present-title": "Atual"
     }
+  },
+  "Contact": {
+    "contact-title": "Entre em contato",
+    "form": {
+      "contact-email-button-text": "Enviar",
+      "message-label": "Mensagem",
+      "name-label": "Nome",
+      "request-error": "Erro ao enviar email",
+      "request-success": "Email enviado com sucesso"
+    }
   }
 }
