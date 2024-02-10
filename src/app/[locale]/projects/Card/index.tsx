@@ -1,8 +1,9 @@
-import { FaLocationArrow } from "react-icons/fa";
+import { MdOutlineLaunch } from "react-icons/md";
 import { AiFillGithub } from "react-icons/ai";
 import styles from "./styles.module.scss";
 import { DateFormat } from "./DateFormat";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 interface CardProps {
   title: string;
@@ -20,11 +21,13 @@ interface IProps {
 export function Card({
   data: { title, description, imageUrl, githubSlug, url, updatedAt },
 }: IProps) {
+  const t = useTranslations("Projects");
+
   return (
     <div className={styles.container}>
       <figure className={styles.imageContainer}>
         <Image
-          alt="Imagem do projeto"
+          alt={t("card-image-alt", { title })}
           src={imageUrl}
           fill={true}
           className={styles.image}
@@ -47,17 +50,17 @@ export function Card({
             </div>
           </div>
 
-          <div className="icons">
+          <div className={styles.icons}>
             <a
               href={`https://github.com/oscarkemuel/${githubSlug}`}
               target="_blank"
               rel="noreferrer"
             >
-              <AiFillGithub />
+              <AiFillGithub size={22} />
             </a>
             {url && (
               <a href={url} target="_blank" rel="noreferrer">
-                <FaLocationArrow size={22} />
+                <MdOutlineLaunch size={22} />
               </a>
             )}
           </div>

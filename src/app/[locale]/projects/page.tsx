@@ -1,5 +1,5 @@
 import { Section } from "@/components/Section";
-import { Card } from "@/components/Card";
+import { Card } from "./Card";
 import { getAllProjects } from "@/services/contentful";
 import { useLocale } from "next-intl";
 import styles from "./projects.module.scss";

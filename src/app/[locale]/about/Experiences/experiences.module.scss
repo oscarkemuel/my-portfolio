@@ -11,12 +11,23 @@
     height: unset !important;
     border-radius: 0.2rem;
   }
+
+  @media (max-width: 500px) {
+    margin-bottom: 5px;
+  }
 }
 
 .itens {
   list-style: none;
   padding: 0;
   margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+
+  @media (max-width: 500px) {
+    gap: 1rem;
+  }
 }
 
 .item {
@@ -25,6 +36,19 @@
 
   &:last-child {
     margin-bottom: 0;
+  }
+
+  @media (max-width: 1255px) {
+    min-width: 500px;
+    max-width: 550px;
+  }
+
+  @media (max-width: 670px) {
+    min-width: 100%;
+  }
+
+  @media (max-width: 500px) {
+    flex-direction: column;
   }
 }
 

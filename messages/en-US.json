@@ -33,5 +33,8 @@
       "request-error": "Error sending email",
       "request-success": "Email sent successfully"
     }
+  },
+  "Projects": {
+    "card-image-alt": "Project image: {title}"
   }
 }

@@ -32,7 +32,7 @@ export default function About() {
               </figure>
             </div>
 
-            <div>
+            <div className={styles.initialTexts}>
               <h2>{t("about-title")}</h2>
               <p>{t("about-apresentation")}</p>
             </div>

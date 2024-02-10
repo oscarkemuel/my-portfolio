@@ -60,7 +60,12 @@
     background: transparent;
     color: var(--white);
     font-size: 28px;
-    margin-right: 10px;
+    margin-left: 12px;
+  }
+
+  .icons {
+    display: flex;
+    align-items: center;
   }
 }
 
