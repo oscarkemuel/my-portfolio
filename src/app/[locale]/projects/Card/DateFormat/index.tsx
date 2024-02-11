@@ -3,10 +3,11 @@ import { useLocale } from "next-intl";
 
 interface DateFormatProps {
   date: string;
+  className?: string;
 }
 
-export const DateFormat = ({ date }: DateFormatProps) => {
+export const DateFormat = ({ date, className }: DateFormatProps) => {
   const locale = useLocale();
 
-  return <span>{formatDate(date, locale)}</span>;
+  return <span className={className}>{formatDate(date, locale)}</span>;
 };
