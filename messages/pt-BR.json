@@ -8,13 +8,15 @@
     "home": "Início",
     "about": "Sobre",
     "projects": "Projetos",
-    "contact": "Contato"
+    "contact": "Contato",
+    "blog": "Blog"
   },
   "Section": {
     "home": "Início",
     "about": "Sobre",
     "projects": "Projetos",
-    "contact": "Contato"
+    "contact": "Contato",
+    "blog": "Blog"
   },
   "About": {
     "about-apresentation": "Sou um desenvolvedor web e mobile com conhecimento em React para front-end e mobile. Atualmente, estou cursando Bacharelado em Tecnologia da Informação na UFRN. Tenho como objetivo criar interfaces que proporcionem a melhor experiência de usuário possível. Estou sempre aberto a aprender e aprimorar minhas habilidades em diferentes tecnologias, linguagens e frameworks.",
