@@ -21,6 +21,7 @@ export interface IGetEntriesResponse {
   items: Array<{
     fields: any;
     sys: {
+      id: string;
       updatedAt: string;
     };
   }>;

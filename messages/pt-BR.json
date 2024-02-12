@@ -38,5 +38,9 @@
   },
   "Projects": {
     "card-image-alt": "Imagem do projeto: {title}"
+  },
+  "Blog": {
+    "blog-title": "Minhas publicações",
+    "read-more": "Ler mais"
   }
 }

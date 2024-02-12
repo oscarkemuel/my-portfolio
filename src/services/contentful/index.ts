@@ -1,6 +1,8 @@
 import {
   IGetAllExperiences,
   IGetAllExperiencesResponse,
+  IGetAllPosts,
+  IGetAllPostsResponse,
   IGetAllProjects,
   IGetAllProjectsResponse,
 } from "./types";
@@ -43,4 +45,22 @@ export const getAllExperiences = async ({
   const data = await response.json();
 
   return data as IGetAllExperiencesResponse;
+};
+
+export const getAllPosts = async ({
+  revalidateInHours,
+  locale,
+}: IGetAllPosts) => {
+  const route = `${NEXT_PUBLIC_BFF_URL}/blog?locale=${locale || "pt-BR"}`;
+  const response = await fetch(route, {
+    next: {
+      revalidate: revalidateInHours
+        ? 60 * 60 * Number(revalidateInHours)
+        : false,
+    },
+  });
+
+  const data = await response.json();
+
+  return data as IGetAllPostsResponse;
 };

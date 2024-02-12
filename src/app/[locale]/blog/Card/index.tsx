@@ -5,28 +5,28 @@ import { Link } from "@/navigation";
 import Image from "next/image";
 
 interface CardProps {
+  id: string;
   title: string;
   description: string;
-  githubSlug?: string;
-  url?: string;
-  updatedAt?: string;
+  updatedAt: string;
 }
 
 interface IProps {
   data: CardProps;
 }
 
-export function Card({
-  data: { title, description, githubSlug, url, updatedAt },
-}: IProps) {
-  const t = useTranslations("Projects");
+export function Card({ data: { title, description, id, updatedAt } }: IProps) {
+  const t = useTranslations("Blog");
 
   return (
     <article className={styles.container}>
       <div className={styles.content}>
         <div className={styles.headerContent}>
-          <DateFormat date={updatedAt!} className={styles.date} />
-          <div className={styles.imageContainer} aria-label="Foto do autor Oscar Kemuel">
+          <DateFormat date={updatedAt} className={styles.date} />
+          <div
+            className={styles.imageContainer}
+            aria-label="Foto do autor Oscar Kemuel"
+          >
             <figure>
               <Image
                 src="https://avatars.githubusercontent.com/u/34771800?s=96&v=4"
@@ -42,7 +42,7 @@ export function Card({
       </div>
 
       <div className={styles.footer}>
-        <Link href={`/blog/${githubSlug}`}>Read more</Link>
+        <Link href={`/blog/${id}`}>{t("read-more")}</Link>
       </div>
     </article>
   );

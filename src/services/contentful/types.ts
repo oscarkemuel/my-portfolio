@@ -31,3 +31,17 @@ export interface IGetAllExperiences extends IGetGeneric {}
 export interface IGetAllExperiencesResponse {
   experiences: IExperience[];
 }
+
+export interface IGetAllPosts extends IGetGeneric {}
+
+export type IPost = {
+  id: string;
+  title: string;
+  description: string;
+  updatedAt: string;
+  data: any;
+};
+
+export interface IGetAllPostsResponse {
+  posts: IPost[];
+}
