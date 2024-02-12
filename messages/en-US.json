@@ -41,6 +41,11 @@
   },
   "Blog": {
     "blog-title": "My publications",
-    "read-more": "Read more"
+    "read-more": "Read more",
+    "back": "Back to blog"
+  },
+  "404": {
+    "title": "Page not found",
+    "back": "Back to home"
   }
 }

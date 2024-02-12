@@ -45,3 +45,15 @@ export type IPost = {
 export interface IGetAllPostsResponse {
   posts: IPost[];
 }
+
+interface IGetEntryGeneric {
+  id: string;
+  locale?: string;
+  revalidateInHours?: number;
+}
+
+export interface IGetPost extends IGetEntryGeneric {}
+
+export interface IGetPostResponse {
+  post: IPost;
+}

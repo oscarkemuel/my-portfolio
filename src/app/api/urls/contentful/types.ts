@@ -27,3 +27,9 @@ export interface IGetEntriesResponse {
   }>;
   includes?: Includes;
 }
+
+export interface IGetEntry {
+  id: string;
+  revalidateInHours?: number;
+  locale?: string;
+}
