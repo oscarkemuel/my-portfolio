@@ -65,7 +65,7 @@ export default async function Page({ params }: IParams) {
             <span>@oscarkemuel</span>
           </div>
         </a>
-        <p className={styles.date}>{formatDate(post.updatedAt)}</p>
+        <p className={styles.date}>{formatDate(post.updatedAt, locale)}</p>
 
         <div>{documentToReactComponents(post.data, documentParseOptions)}</div>
       </article>
