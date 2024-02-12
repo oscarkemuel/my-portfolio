@@ -213,3 +213,19 @@
     }
   }
 }
+
+.imageOfPostContainer {
+  margin-bottom: 12px;
+
+  div {
+    position: unset !important;
+  }
+
+  .imageOfPost {
+    max-width: 500px;
+    height: auto;
+    position: relative !important;
+    object-fit: contain;
+    margin: 0 !important;
+  }
+}

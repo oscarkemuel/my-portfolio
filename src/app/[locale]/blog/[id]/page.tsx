@@ -5,9 +5,8 @@ import { GoArrowLeft } from "react-icons/go";
 import Image from "next/image";
 import { formatDate } from "@/utils/dateUtils";
 import { getPost } from "@/services/contentful";
-import { useLocale, useTranslations } from "next-intl";
+import { useLocale } from "next-intl";
 import { getTranslations } from "next-intl/server";
-import { notFound } from "next/navigation";
 
 interface IParams {
   params: {
@@ -18,7 +17,7 @@ interface IParams {
 export default async function Page({ params }: IParams) {
   const locale = useLocale();
   const t = await getTranslations("Blog");
-  const { post } = await getPost({ id: params.id, locale });
+  const { post, assets } = await getPost({ id: params.id, locale });
 
   const documentParseOptions = {
     renderNode: {
@@ -34,6 +33,25 @@ export default async function Page({ params }: IParams) {
       },
       hr: () => {
         return <hr className={styles.hr} />;
+      },
+      'embedded-asset-block': (node: any) => {
+        const asset = assets.find((asset) => asset.id === node.data.target.sys.id);
+        const url = asset?.url;
+
+        if (!url) {
+          return null;
+        }
+
+        return (
+          <figure className={styles.imageOfPostContainer}>
+            <Image
+              src={url}
+              alt={"Image of post"}
+              fill={true}
+              className={styles.imageOfPost}
+            />
+          </figure>
+        );
       },
     },
   };

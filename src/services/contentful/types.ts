@@ -54,6 +54,12 @@ interface IGetEntryGeneric {
 
 export interface IGetPost extends IGetEntryGeneric {}
 
+export interface IAsset {
+  id: string;
+  url: string;
+}
+
 export interface IGetPostResponse {
   post: IPost;
+  assets: IAsset[];
 }

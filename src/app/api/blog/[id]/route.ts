@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { getEntry } from "../../urls/contentful";
+import { getAsset, getEntry } from "../../urls/contentful";
 import { IGetEntry } from "../../urls/contentful/types";
 import { IPost } from "@/services/contentful/types";
 
@@ -49,5 +49,22 @@ export async function GET(
     );
   }
 
-  return NextResponse.json({ post });
+  const assetsId: string[] = [];
+
+  post.data!.content.forEach((content: any) => {
+    if(content.nodeType === "embedded-asset-block") {
+      assetsId.push(content.data.target.sys.id);
+    }
+  })
+
+  const assets = await Promise.all(assetsId.map(async (id) => {
+    const asset = await getAsset({ id, locale });
+
+    return {
+      id: asset.sys.id,
+      url: `https:${asset.fields.file.url}`
+    };
+  }));
+
+  return NextResponse.json({ post, assets });
 }
