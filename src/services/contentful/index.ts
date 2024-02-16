@@ -70,7 +70,7 @@ export const getPost = async ({ id, locale, revalidateInHours }: IGetPost) => {
     },
   });
 
-  if (response.status === 404) {
+  if (response.status === 404 || response.status === 500) {
     return notFound();
   }
 

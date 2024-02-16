@@ -7,10 +7,34 @@ import { formatDate } from "@/utils/dateUtils";
 import { getPost } from "@/services/contentful";
 import { useLocale } from "next-intl";
 import { getTranslations } from "next-intl/server";
+import { Metadata } from "next";
+import { generateMetadata as generateNewMetadata } from "@/utils/generateMetadata";
 
 interface IParams {
   params: {
     id: string;
+    locale: string;
+  };
+}
+
+export async function generateMetadata({ params }: IParams): Promise<Metadata> {
+  const { id, locale } = params;
+
+  const { post } = await getPost({ id, locale });
+
+  return {
+    ...generateNewMetadata({
+      inverseTitle: true,
+      title: post.title,
+      description: post.description,
+      routePathName: `blog/${id}`,
+      keywords: [
+        post.title
+      ],
+      rest: {
+        type: "article",
+      },
+    }),
   };
 }
 
@@ -34,8 +58,10 @@ export default async function Page({ params }: IParams) {
       hr: () => {
         return <hr className={styles.hr} />;
       },
-      'embedded-asset-block': (node: any) => {
-        const asset = assets.find((asset) => asset.id === node.data.target.sys.id);
+      "embedded-asset-block": (node: any) => {
+        const asset = assets.find(
+          (asset) => asset.id === node.data.target.sys.id
+        );
         const url = asset?.url;
 
         if (!url) {
