@@ -42,7 +42,7 @@ export async function generateMetadata({ params }: IProps): Promise<Metadata> {
 export default async function Page({ params }: IProps) {
   const locale = useLocale();
   const t = await getTranslations("Blog");
-  const { post, assets } = await getPost({ id: params.id, locale });
+  const { post, assets } = await getPost({ id: params.id, locale, revalidateInHours: 12 });
 
   const documentParseOptions = {
     renderNode: {
