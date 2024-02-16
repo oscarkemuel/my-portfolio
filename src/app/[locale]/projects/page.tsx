@@ -3,14 +3,25 @@ import { Card } from "./Card";
 import { getAllProjects } from "@/services/contentful";
 import { useLocale } from "next-intl";
 import styles from "./projects.module.scss";
-import { generateMetadata } from "@/utils/generateMetadata";
+import { generateNewMetadata } from "@/utils/generateMetadata";
+import { getTranslations } from "next-intl/server";
 
-export const metadata = {
-  ...generateMetadata({
-    title: "Projetos",
-    routePathName: "projects",
-  }),
-};
+interface IProps {
+  params: {
+    locale: string;
+  };
+}
+
+export async function generateMetadata({ params: { locale } }: IProps) {
+  const t = await getTranslations({ locale, namespace: "Navbar" });
+
+  return {
+    ...generateNewMetadata({
+      title: t('projects'),
+      routePathName: "projects",
+    }),
+  };
+}
 
 async function getProjects(locale: string) {
   const response = await getAllProjects({

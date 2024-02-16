@@ -8,17 +8,17 @@ import { getPost } from "@/services/contentful";
 import { useLocale } from "next-intl";
 import { getTranslations } from "next-intl/server";
 import { Metadata } from "next";
-import { generateMetadata as generateNewMetadata } from "@/utils/generateMetadata";
+import { generateNewMetadata } from "@/utils/generateMetadata";
 import { constants } from "@/utils/constants";
 
-interface IParams {
+interface IProps {
   params: {
     id: string;
     locale: string;
   };
 }
 
-export async function generateMetadata({ params }: IParams): Promise<Metadata> {
+export async function generateMetadata({ params }: IProps): Promise<Metadata> {
   const { id, locale } = params;
 
   const { post } = await getPost({ id, locale });
@@ -39,7 +39,7 @@ export async function generateMetadata({ params }: IParams): Promise<Metadata> {
   };
 }
 
-export default async function Page({ params }: IParams) {
+export default async function Page({ params }: IProps) {
   const locale = useLocale();
   const t = await getTranslations("Blog");
   const { post, assets } = await getPost({ id: params.id, locale });

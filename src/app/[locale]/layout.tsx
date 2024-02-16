@@ -2,13 +2,13 @@ import "../globals.scss";
 import { Navbar } from "@/components/Navbar";
 import { courier_prime, inter, montserrat } from "../fonts";
 import { ChangeLangButton } from "@/components/ChangeLangButton";
-import { generateMetadata } from "@/utils/generateMetadata";
+import { generateNewMetadata } from "@/utils/generateMetadata";
 
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export const metadata = {
-  ...generateMetadata({}),
+  ...generateNewMetadata({}),
 };
 
 export default async function RootLayout({

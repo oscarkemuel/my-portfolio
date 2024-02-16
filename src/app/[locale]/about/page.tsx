@@ -1,16 +1,27 @@
 import { Section } from "@/components/Section";
-import { generateMetadata } from "@/utils/generateMetadata";
+import { generateNewMetadata } from "@/utils/generateMetadata";
 import Image from "next/image";
 import styles from "./about.module.scss";
 import { useLocale, useTranslations } from "next-intl";
 import Experiences from "./Experiences";
+import { getTranslations } from "next-intl/server";
 
-export const metadata = {
-  ...generateMetadata({
-    title: "Sobre",
-    routePathName: "about",
-  }),
-};
+interface IProps {
+  params: {
+    locale: string;
+  };
+}
+
+export async function generateMetadata({ params: { locale } }: IProps) {
+  const t = await getTranslations({ locale, namespace: "Navbar" });
+
+  return {
+    ...generateNewMetadata({
+      title: t('about'),
+      routePathName: "about",
+    }),
+  };
+}
 
 export default function About() {
   const locale = useLocale();

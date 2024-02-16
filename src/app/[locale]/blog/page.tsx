@@ -3,14 +3,24 @@ import { getAllPosts } from "@/services/contentful";
 import { useLocale } from "next-intl";
 import { getTranslations } from "next-intl/server";
 import styles from "./styles.module.scss";
-import { generateMetadata } from "@/utils/generateMetadata";
+import { generateNewMetadata } from "@/utils/generateMetadata";
 
-export const metadata = {
-  ...generateMetadata({
-    title: "Blog",
-    routePathName: "blog",
-  }),
-};
+interface IProps {
+  params: {
+    locale: string;
+  };
+}
+
+export async function generateMetadata({ params: { locale } }: IProps) {
+  const t = await getTranslations({ locale, namespace: "Navbar" });
+  
+  return {
+    ...generateNewMetadata({
+      title: t('blog'),
+      routePathName: "blog",
+    }),
+  };
+}
 
 async function getPosts(locale: string) {
   const response = await getAllPosts({

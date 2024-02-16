@@ -1,14 +1,25 @@
 import { Section } from "@/components/Section";
-import { generateMetadata } from "@/utils/generateMetadata";
+import { generateNewMetadata } from "@/utils/generateMetadata";
 import { EmailForm } from "./EmailForm";
 import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 
-export const metadata = {
-  ...generateMetadata({
-    title: "Contato",
-    routePathName: "contact",
-  }),
-};
+interface IProps {
+  params: {
+    locale: string;
+  };
+}
+
+export async function generateMetadata({ params: { locale } }: IProps) {
+  const t = await getTranslations({ locale, namespace: "Navbar" });
+
+  return {
+    ...generateNewMetadata({
+      title: t('contact'),
+      routePathName: "contact",
+    }),
+  };
+}
 
 export default function Contact() {
   const t = useTranslations("Contact");

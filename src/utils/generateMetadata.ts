@@ -15,7 +15,7 @@ interface IProps {
   rest?: any;
 }
 
-export function generateMetadata({ description, metadataBase, routePathName, title, author, keywords, inverseTitle, rest }: IProps): Metadata {
+export function generateNewMetadata({ description, metadataBase, routePathName, title, author, keywords, inverseTitle, rest }: IProps): Metadata {
   const defaultUrl = constants.defaultUrl;
 
   return {
