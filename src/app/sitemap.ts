@@ -3,6 +3,13 @@ import { MetadataRoute } from 'next'
 
 function generatePages() {
   const defaultUrl = constants.defaultUrl;
+
+  const pagesPaths = [
+    'about',
+    'contact',
+    'projects',
+    'blog'
+  ]
   
   const pages = [
     {
@@ -10,18 +17,10 @@ function generatePages() {
       lastModified: new Date(),
       priority: 1,
     },
-    {
-      url: `${process.env.SITE_URL || defaultUrl}/about`,
+    ...pagesPaths.map((path) => ({
+      url: `${process.env.SITE_URL || defaultUrl}/${path}`,
       lastModified: new Date(),
-    },
-    {
-      url: `${process.env.SITE_URL || defaultUrl}/contact`,
-      lastModified: new Date(),
-    },
-    {
-      url: `${process.env.SITE_URL || defaultUrl}/projects`,
-      lastModified: new Date(),
-    }
+    })),
   ]
 
   return pages
