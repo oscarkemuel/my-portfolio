@@ -21,8 +21,15 @@ export interface IGetEntriesResponse {
   items: Array<{
     fields: any;
     sys: {
+      id: string;
       updatedAt: string;
     };
   }>;
   includes?: Includes;
+}
+
+export interface IGetEntry {
+  id: string;
+  revalidateInHours?: number;
+  locale?: string;
 }

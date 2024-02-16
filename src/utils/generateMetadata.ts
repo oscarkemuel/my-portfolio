@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 
 interface IProps {
+  inverseTitle?: boolean;
   title?: string;
   description?: string;
   metadataBase?: URL;
@@ -10,13 +11,14 @@ interface IProps {
     url: string;
   };
   keywords?: string[];
+  rest?: any;
 }
 
-export function generateMetadata({ description, metadataBase, routePathName, title, author, keywords }: IProps): Metadata {
+export function generateMetadata({ description, metadataBase, routePathName, title, author, keywords, inverseTitle, rest }: IProps): Metadata {
   const defaultUrl = 'https://oscarkemuel.com';
 
   return {
-    title: `Oscar Kemuel | ${title || 'React Developer'}`,
+    title: !inverseTitle ? `Oscar Kemuel | ${title || 'React Developer'}` : `${title || 'React Developer'} | Oscar Kemuel`,
     description: description || 'React Developer',
     metadataBase: metadataBase || new URL(process.env.SITE_URL || defaultUrl),
     alternates: {
@@ -30,7 +32,7 @@ export function generateMetadata({ description, metadataBase, routePathName, tit
       name: author?.name || 'Oscar Kemuel',
       url: author?.url || process.env.SITE_URL || defaultUrl,
     },
-    keywords: keywords || [
+    keywords: [...keywords || [''], 
       'Oscar Kemuel',
       'React Developer',
       'Front-end Developer',
@@ -44,6 +46,7 @@ export function generateMetadata({ description, metadataBase, routePathName, tit
       'JavaScript',
       'Front-end',
       'Developer'
-    ]
+    ],
+    ...rest,
   }
 }

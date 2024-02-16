@@ -42,13 +42,12 @@ a {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #f3c995; 
+  background: var(--text); 
 }
  
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: #575656; 
-  border-radius: 50px;
 }
 
 /* Handle on hover */
