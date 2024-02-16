@@ -2,6 +2,7 @@ import Image from "next/image";
 import styles from "./styles.module.scss";
 import { FaGithubSquare, FaLinkedin, FaFileAlt } from "react-icons/fa";
 import { useLocale, useTranslations } from "next-intl";
+import { constants } from "@/utils/constants";
 
 export function Apresentation() {
   const locale = useLocale();
@@ -10,22 +11,22 @@ export function Apresentation() {
 
   const getResume = (currentLocale: string) => {
     if (currentLocale === "en-US") {
-      return "https://bit.ly/3J3dMhM";
+      return constants.resumeEnUsUrl;
     }
 
-    return "https://bit.ly/3P0r9D3";
+    return constants.resumePtBrUrl;
   }
 
 
   const social = [
     {
       name: "Github",
-      url: "https://github.com/oscarkemuel",
+      url: constants.githubUrl,
       icon: <FaGithubSquare size={35} color="var(--white)" />,
     },
     {
       name: "Linkedin",
-      url: "https://www.linkedin.com/in/oscar-kemuel/",
+      url: constants.linkedinUrl,
       icon: <FaLinkedin size={35} color="#0072b1" />,
     },
     {

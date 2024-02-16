@@ -1,7 +1,8 @@
+import { constants } from '@/utils/constants';
 import { MetadataRoute } from 'next'
 
 function generatePages() {
-  const defaultUrl = 'https://oscarkemuel.com';
+  const defaultUrl = constants.defaultUrl;
   
   const pages = [
     {

@@ -1,3 +1,4 @@
+import { constants } from '@/utils/constants'
 import { MetadataRoute } from 'next'
  
 export default function robots(): MetadataRoute.Robots {
@@ -7,6 +8,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: '/private/',
     },
-    sitemap: `${process.env.SITE_URL || 'https://oscarkemuel.com'}/sitemap.xml`,
+    sitemap: `${process.env.SITE_URL || constants.defaultUrl}/sitemap.xml`,
   }
 }

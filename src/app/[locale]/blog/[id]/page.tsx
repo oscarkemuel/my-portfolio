@@ -9,6 +9,7 @@ import { useLocale } from "next-intl";
 import { getTranslations } from "next-intl/server";
 import { Metadata } from "next";
 import { generateMetadata as generateNewMetadata } from "@/utils/generateMetadata";
+import { constants } from "@/utils/constants";
 
 interface IParams {
   params: {
@@ -90,14 +91,14 @@ export default async function Page({ params }: IParams) {
         </Link>
         <a
           className={styles.author}
-          href="https://www.linkedin.com/in/oscar-kemuel/"
+          href={constants.linkedinUrl}
           target="_blank"
           rel="noreferrer"
         >
           <div className={styles.imageContainer}>
             <figure>
               <Image
-                src="https://avatars.githubusercontent.com/u/34771800?s=96&v=4"
+                src={constants.githubProfileImage}
                 alt="Foto do autor Oscar Kemuel"
                 fill={true}
                 className={styles.image}
@@ -105,8 +106,8 @@ export default async function Page({ params }: IParams) {
             </figure>
           </div>
           <div className={styles.authorInfo}>
-            <span>Oscar Kemuel</span>
-            <span>@oscarkemuel</span>
+            <span>{constants.authorName}</span>
+            <span>{constants.instagram}</span>
           </div>
         </a>
         <p className={styles.date}>{formatDate(post.updatedAt, locale)}</p>

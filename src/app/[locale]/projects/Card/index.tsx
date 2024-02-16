@@ -4,6 +4,7 @@ import styles from "./styles.module.scss";
 import { DateFormat } from "./DateFormat";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+import { constants } from "@/utils/constants";
 
 interface CardProps {
   title: string;
@@ -52,7 +53,7 @@ export function Card({
 
           <div className={styles.icons}>
             <a
-              href={`https://github.com/oscarkemuel/${githubSlug}`}
+              href={`${constants.githubUrl}/${githubSlug}`}
               target="_blank"
               rel="noreferrer"
             >

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { constants } from './constants';
 
 interface IProps {
   inverseTitle?: boolean;
@@ -15,7 +16,7 @@ interface IProps {
 }
 
 export function generateMetadata({ description, metadataBase, routePathName, title, author, keywords, inverseTitle, rest }: IProps): Metadata {
-  const defaultUrl = 'https://oscarkemuel.com';
+  const defaultUrl = constants.defaultUrl;
 
   return {
     title: !inverseTitle ? `Oscar Kemuel | ${title || 'React Developer'}` : `${title || 'React Developer'} | Oscar Kemuel`,

@@ -3,6 +3,7 @@ import { useTranslations } from "next-intl";
 import { DateFormat } from "../../projects/Card/DateFormat";
 import { Link } from "@/navigation";
 import Image from "next/image";
+import { constants } from "@/utils/constants";
 
 interface CardProps {
   id: string;
@@ -29,7 +30,7 @@ export function Card({ data: { title, description, id, updatedAt } }: IProps) {
           >
             <figure>
               <Image
-                src="https://avatars.githubusercontent.com/u/34771800?s=96&v=4"
+                src={constants.githubProfileImage}
                 alt="Foto do autor Oscar Kemuel"
                 fill={true}
                 className={styles.image}
