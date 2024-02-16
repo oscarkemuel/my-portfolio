@@ -21,7 +21,7 @@ interface IProps {
 export async function generateMetadata({ params }: IProps): Promise<Metadata> {
   const { id, locale } = params;
 
-  const { post } = await getPost({ id, locale });
+  const { post } = await getPost({ id, locale, revalidateInHours: 12 });
 
   return {
     ...generateNewMetadata({
