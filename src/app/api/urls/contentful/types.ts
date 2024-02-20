@@ -2,6 +2,8 @@ export interface IGetEntries {
   contentType: string;
   revalidateInHours?: number;
   locale?: string;
+  limit?: number;
+  params?: string;
 }
 
 export interface Includes {

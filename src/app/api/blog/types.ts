@@ -4,4 +4,5 @@ export interface IPost {
   description: string;
   updatedAt: string;
   data?: any;
+  slug: string;
 }

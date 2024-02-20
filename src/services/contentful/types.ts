@@ -40,6 +40,7 @@ export type IPost = {
   description: string;
   updatedAt: string;
   data: any;
+  slug: string;
 };
 
 export interface IGetAllPostsResponse {
@@ -52,7 +53,9 @@ interface IGetEntryGeneric {
   revalidateInHours?: number;
 }
 
-export interface IGetPost extends IGetEntryGeneric {}
+export interface IGetPost extends Omit<IGetEntryGeneric, "id"> {
+  slug: string;
+}
 
 export interface IAsset {
   id: string;

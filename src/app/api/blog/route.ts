@@ -30,12 +30,13 @@ export async function GET(req: Request) {
 
   posts = reponsePosts.items.map((item) => {
     const { fields } = item;
-    const { title, description, updateAt } = fields;
+    const { title, description, updateAt, slug } = fields;
 
     return {
       id: item.sys.id,
       title,
       description,
+      slug,
       updatedAt: new Date(updateAt).toString(),
     } as IPost;
   });

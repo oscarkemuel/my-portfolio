@@ -62,8 +62,8 @@ export const getAllPosts = async ({
   return data as IGetAllPostsResponse;
 };
 
-export const getPost = async ({ id, locale, revalidateInHours }: IGetPost) => {
-  const route = `${NEXT_PUBLIC_BFF_URL}/blog/${id}?locale=${locale || "pt-BR"}`;
+export const getPost = async ({ slug, locale, revalidateInHours }: IGetPost) => {
+  const route = `${NEXT_PUBLIC_BFF_URL}/blog/${slug}?locale=${locale || "pt-BR"}`;
   const response = await fetch(route, {
     next: {
       revalidate: revalidateInHours ? 60 * 60 * Number(revalidateInHours) : 0,

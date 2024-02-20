@@ -43,13 +43,13 @@ export default async function Blog() {
 
         <div className={styles.articles}>
           {posts.map((posts) => {
-            const { description, title, updatedAt, id } = posts;
+            const { description, title, updatedAt, id, slug } = posts;
 
             return (
               <Card
                 key={title}
                 data={{
-                  id,
+                  id: slug,
                   description,
                   title,
                   updatedAt,

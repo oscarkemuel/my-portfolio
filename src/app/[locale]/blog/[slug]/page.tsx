@@ -13,22 +13,22 @@ import { constants } from "@/utils/constants";
 
 interface IProps {
   params: {
-    id: string;
+    slug: string;
     locale: string;
   };
 }
 
 export async function generateMetadata({ params }: IProps): Promise<Metadata> {
-  const { id, locale } = params;
+  const { slug, locale } = params;
 
-  const { post } = await getPost({ id, locale, revalidateInHours: 12 });
+  const { post } = await getPost({ slug, locale, revalidateInHours: 12 });
 
   return {
     ...generateNewMetadata({
       inverseTitle: true,
       title: post.title,
       description: post.description,
-      routePathName: `blog/${id}`,
+      routePathName: `blog/${slug}`,
       keywords: [
         post.title
       ],
@@ -42,7 +42,7 @@ export async function generateMetadata({ params }: IProps): Promise<Metadata> {
 export default async function Page({ params }: IProps) {
   const locale = useLocale();
   const t = await getTranslations("Blog");
-  const { post, assets } = await getPost({ id: params.id, locale, revalidateInHours: 12 });
+  const { post, assets } = await getPost({ slug: params.slug, locale, revalidateInHours: 12 });
 
   const documentParseOptions = {
     renderNode: {
