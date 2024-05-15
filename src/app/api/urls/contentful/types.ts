@@ -12,6 +12,8 @@ export interface Includes {
       id: string;
     };
     fields: {
+      title: string;
+      description: string;
       file: {
         url: string;
       };

@@ -17,7 +17,7 @@ export async function generateMetadata({ params: { locale } }: IProps) {
 
   return {
     ...generateNewMetadata({
-      title: t('projects'),
+      title: t("projects"),
       routePathName: "projects",
     }),
   };
@@ -33,12 +33,18 @@ async function getProjects(locale: string) {
 }
 
 export default async function Project() {
+  const t = await getTranslations("Projects");
   const locale = useLocale();
   const { projects } = await getProjects(locale);
 
   return (
     <main>
-      <Section>
+      <Section className={styles.content}>
+        <div className={styles.header}>
+          <h1>{t("projects-title")}</h1>
+          <h2>{t("projects-description")}</h2>
+        </div>
+        
         <div className={styles.projects}>
           {projects.map((project) => {
             const { description, image, title, updatedAt, githubSlug, url } =

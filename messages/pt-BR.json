@@ -19,7 +19,7 @@
     "blog": "Blog"
   },
   "About": {
-    "about-apresentation": "Sou um desenvolvedor web e mobile com conhecimento em React para front-end e mobile. Atualmente, estou cursando Bacharelado em Tecnologia da Informação na UFRN. Tenho como objetivo criar interfaces que proporcionem a melhor experiência de usuário possível. Estou sempre aberto a aprender e aprimorar minhas habilidades em diferentes tecnologias, linguagens e frameworks.",
+    "about-apresentation": "Sou um desenvolvedor web e mobile, com especialidade em front-end. Atualmente, estou cursando Bacharelado em Tecnologia da Informação na UFRN. Tenho como objetivo criar interfaces que proporcionem a melhor experiência de usuário possível. Estou sempre aberto a aprender e aprimorar minhas habilidades em diferentes tecnologias, linguagens e frameworks.",
     "about-title": "Sobre mim",
     "experiences-title": "Experiências",
     "experiences": {
@@ -37,10 +37,13 @@
     }
   },
   "Projects": {
-    "card-image-alt": "Imagem do projeto: {title}"
+    "card-image-alt": "Imagem do projeto: {title}",
+    "projects-title": "Meus projetos",
+    "projects-description": "Aqui estão alguns projetos que desenvolvi ou participei. Clique para saber mais sobre eles 🚀"
   },
   "Blog": {
     "blog-title": "Minhas publicações",
+    "blog-description": "Publicações focadas no público junior, direto ao ponto, sem muitas firulas e com uma liguagem não tão formal 😎",
     "read-more": "Ler mais",
     "back": "Voltar para o blog"
   },

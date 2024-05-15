@@ -40,6 +40,7 @@ export default async function Blog() {
     <main className={styles.container}>
       <div className={styles.content}>
         <h1>{t("blog-title")}</h1>
+        <h2>{t("blog-description")}</h2>
 
         <div className={styles.articles}>
           {posts.map((posts) => {

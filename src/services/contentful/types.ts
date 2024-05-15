@@ -60,6 +60,8 @@ export interface IGetPost extends Omit<IGetEntryGeneric, "id"> {
 export interface IAsset {
   id: string;
   url: string;
+  title: string;
+  description: string;
 }
 
 export interface IGetPostResponse {

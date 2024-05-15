@@ -52,7 +52,7 @@ export function Apresentation() {
 
         <div className={styles.titles}>
           <h1>{t('apresentation')}</h1>
-          <h2><span style={{color: 'var(--blue)'}}>React</span> Developer</h2>
+          <h2><span style={{color: 'var(--blue)'}}>Software</span> Developer</h2>
           <p>{t('about', {age})}</p>
         </div>
       </div>

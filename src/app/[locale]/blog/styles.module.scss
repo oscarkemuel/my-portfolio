@@ -1,20 +1,24 @@
 .container {
   display: flex;
   justify-content: center;
-  padding: 2rem 0;
-
-  
+  padding: 4rem 0 2rem 0;
 }
 
 .content {
   padding: 0 1rem;
 
   h1 {
-    margin: 2rem 0;
+    margin: 1rem 0;
+  }
+
+  h2 {
+    max-width: 1000px;
+    font-size: 1rem;
   }
 }
 
 .articles {
+  margin-top: 3rem;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;

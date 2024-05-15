@@ -19,8 +19,8 @@ export function generateNewMetadata({ description, metadataBase, routePathName, 
   const defaultUrl = constants.defaultUrl;
 
   return {
-    title: !inverseTitle ? `Oscar Kemuel | ${title || 'React Developer'}` : `${title || 'React Developer'} | Oscar Kemuel`,
-    description: description || 'React Developer',
+    title: !inverseTitle ? `Oscar Kemuel | ${title || 'Software Developer'}` : `${title || 'Software Developer'} | Oscar Kemuel`,
+    description: description || 'Software Developer',
     metadataBase: metadataBase || new URL(process.env.SITE_URL || defaultUrl),
     alternates: {
       canonical: routePathName || '',
@@ -35,9 +35,9 @@ export function generateNewMetadata({ description, metadataBase, routePathName, 
     },
     keywords: [...keywords || [''], 
       'Oscar Kemuel',
-      'React Developer',
+      'Software Developer',
       'Front-end Developer',
-      'React Developer',
+      'Software Developer',
       'Next.js Developer',
       'TypeScript Developer',
       'JavaScript Developer',

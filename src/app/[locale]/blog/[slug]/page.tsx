@@ -63,7 +63,8 @@ export default async function Page({ params }: IProps) {
         const asset = assets.find(
           (asset) => asset.id === node.data.target.sys.id
         );
-        const url = asset?.url;
+
+        const { url, description, title } = asset!;
 
         if (!url) {
           return null;
@@ -72,8 +73,9 @@ export default async function Page({ params }: IProps) {
         return (
           <figure className={styles.imageOfPostContainer}>
             <Image
+              id={title}
+              alt={description}
               src={url}
-              alt={"Image of post"}
               fill={true}
               className={styles.imageOfPost}
             />

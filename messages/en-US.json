@@ -19,7 +19,7 @@
     "blog": "Blog"
   },
   "About": {
-    "about-apresentation": "I am a web and mobile developer with expertise in React for both front-end and mobile development. Currently, I am pursuing a Bachelor's degree in Information Technology at UFRN. My goal is to create interfaces that provide the best possible user experience. I am always open to learning and enhancing my skills in various technologies, languages, and frameworks.",
+    "about-apresentation": "I am a web and mobile developer specializing in front-end. I am currently pursuing a Bachelor's degree in Information Technology at UFRN. My goal is to create interfaces that provide the best possible user experience. I am always open to learning and improving my skills in different technologies, languages, and frameworks.",
     "about-title": "About me",
     "experiences-title": "Experiences",
     "experiences": {
@@ -37,10 +37,13 @@
     }
   },
   "Projects": {
-    "card-image-alt": "Project image: {title}"
+    "card-image-alt": "Project image: {title}",
+    "projects-title": "My projects",
+    "projects-description": "Here are some projects I developed or participated in. Click to learn more about them 🚀"
   },
   "Blog": {
     "blog-title": "My publications",
+    "blog-description": "Publications aimed at a junior audience, straight to the point, without too much fuss, and with a not-so-formal language 😎",
     "read-more": "Read more",
     "back": "Back to blog"
   },

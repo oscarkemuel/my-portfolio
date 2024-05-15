@@ -45,15 +45,16 @@ export async function GET(
       slug: fields.slug,
     };
 
-    if(includes && includes.Asset) {
+    if (includes && includes.Asset) {
       assets = includes.Asset.map((asset) => {
         return {
           id: asset.sys.id,
-          url: `https:${asset.fields.file.url}`
+          title: asset.fields.title,
+          description: asset.fields.description,
+          url: `https:${asset.fields.file.url}`,
         };
       });
     }
-
   } catch (error) {
     NextResponse.json(
       {

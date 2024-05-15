@@ -1,6 +1,23 @@
 .projects {
+  margin-top: 3rem;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+}
+
+.header {
+  h1 {
+    font-size: 2rem;
+    margin: 1rem 0;
+  }
+
+  h2 {
+    max-width: 1000px;
+    font-size: 1rem;
+  }
+}
+
+.content {
+  padding: 0 1rem;
 }
