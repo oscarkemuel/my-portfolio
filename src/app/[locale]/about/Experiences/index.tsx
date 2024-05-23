@@ -49,9 +49,13 @@ export default async function Experiences({ locale }: IProps) {
     return `${startDateFormated} - ${finalDateFormated}`;
   }
 
+  const experiencesSortedByInitialDate = experiences.sort(
+    (a, b) => new Date(b.startDate).getTime() - new Date(a.startDate).getTime()
+  );
+
   return (
     <ul className={styles.itens}>
-      {experiences.reverse().map((experience) => (
+      {experiencesSortedByInitialDate.map((experience) => (
         <li key={experience.company} className={styles.item}>
           <div className={styles.imageContainer}>
             <figure>

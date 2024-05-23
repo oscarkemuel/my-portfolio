@@ -53,9 +53,10 @@ export function Card({
 
           <div className={styles.icons}>
             <a
-              href={`${constants.githubUrl}/${githubSlug}`}
+              href={`${constants.githubUrl}/${githubSlug || ""}`}
               target="_blank"
               rel="noreferrer"
+              
             >
               <AiFillGithub size={22} />
             </a>

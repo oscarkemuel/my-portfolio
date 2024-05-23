@@ -37,6 +37,10 @@ export default async function Project() {
   const locale = useLocale();
   const { projects } = await getProjects(locale);
 
+  const projectsSortedByDate = projects.sort(
+    (a, b) => new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime()
+  );
+
   return (
     <main>
       <Section className={styles.content}>
